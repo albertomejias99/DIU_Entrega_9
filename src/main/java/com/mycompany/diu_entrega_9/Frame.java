@@ -25,6 +25,7 @@ public class Frame extends javax.swing.JFrame {
     public Frame() {
         initComponents();
         tablesList.setModel(tablesModel);
+        fieldList.setModel(fieldsModel);
         multipleIntervalSelBtn.setSelected(true);
     }
 
@@ -247,17 +248,23 @@ public class Frame extends javax.swing.JFrame {
     private void selectTableBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_selectTableBtnActionPerformed
         if (tablesModel.getSize() > 0) {
             int[] indices = tablesList.getSelectedIndices();
+            fieldList.removeAll();
+            fieldsModel.removeAllElements();
             for (int indice : indices) {
                 try {
-                    ResultSet rs2 = md.getColumns(null, null, tablesList.getSelectedValue(), null);
+                    ResultSet rs2 = md.getColumns(null, null, (String) tablesModel.getElementAt(indice), null);
                     while (rs2.next()) {
                         String nombreCampo = rs2.getString("COLUMN_NAME");
-                        System.out.println(" Campo: " + nombreCampo);
+                        int index = 0;
+                        System.out.println(nombreCampo);
+                        fieldsModel.add(index, nombreCampo);
+                        index++;
                     }
                 } catch (SQLException ex) {
                     JOptionPane.showMessageDialog(rootPane, "Fallo de conexión en la base de datos", "Fallo de conexión", JOptionPane.ERROR_MESSAGE);
                 }
             }
+            
         }
 
     }//GEN-LAST:event_selectTableBtnActionPerformed
@@ -276,9 +283,7 @@ public class Frame extends javax.swing.JFrame {
                 String nombreTabla = rs.getString("TABLE_NAME");
                 int index = 0;
                 tablesModel.add(index, nombreTabla);
-
                 index++;
-
             }
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(Frame.class.getName()).log(Level.SEVERE, null, ex);
@@ -291,8 +296,8 @@ public class Frame extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         tablesList.removeAll();
         fieldList.removeAll();
-        tablesList.updateUI();
-        fieldList.updateUI();
+        tablesModel.removeAllElements();
+        fieldsModel.removeAllElements();
         try {
             con.close();
         } catch (SQLException ex) {
