@@ -1,0 +1,4 @@
+Servidor: mozart.dis.ulpgc.es	o    i7-lab5.dis.ulpgc.es
+Base de datos: DIU_BD
+Usuario: estudiante-DIU
+Clave: Diu_2021_22

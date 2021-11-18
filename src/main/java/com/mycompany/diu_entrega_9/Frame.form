@@ -51,16 +51,16 @@
                   <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
                   <Component id="userLabel" min="-2" pref="53" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="userText" min="-2" pref="85" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
+                  <Component id="userText" min="-2" pref="105" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
                   <Component id="pwLabel" min="-2" pref="70" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="pwText" min="-2" pref="85" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
+                  <Component id="pwText" min="-2" pref="105" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
                   <Component id="logInBtn" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
-                  <Component id="logOutBtn" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="21" max="32767" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace pref="26" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -74,7 +74,7 @@
                       <Component id="pwLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="pwText" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="logInBtn" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="logOutBtn" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jButton1" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace pref="27" max="32767" attributes="0"/>
               </Group>
@@ -98,13 +98,19 @@
         </Component>
         <Component class="javax.swing.JButton" name="logInBtn">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Log In"/>
+            <Property name="text" type="java.lang.String" value="Iniciar Sesi&#xf3;n"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="logInBtnActionPerformed"/>
+          </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="logOutBtn">
+        <Component class="javax.swing.JButton" name="jButton1">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Log out"/>
+            <Property name="text" type="java.lang.String" value="Cerrar Sesi&#xf3;n"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>
@@ -114,15 +120,20 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="103" alignment="0" groupAlignment="0" attributes="0">
-                          <Component id="singleSelBtn" alignment="0" min="-2" pref="116" max="-2" attributes="0"/>
-                          <Component id="multipleIntervalSelBtn" alignment="1" min="-2" pref="116" max="-2" attributes="0"/>
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                          <Component id="singleSelBtn" min="-2" pref="131" max="-2" attributes="0"/>
                       </Group>
-                      <Component id="singleIntervalSelBtn" alignment="1" min="-2" pref="116" max="-2" attributes="0"/>
+                      <Group type="102" alignment="1" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="singleIntervalSelBtn" alignment="1" min="-2" pref="131" max="-2" attributes="0"/>
+                              <Component id="multipleIntervalSelBtn" alignment="1" min="-2" pref="131" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
                   </Group>
-                  <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="1" attributes="0">
                       <Component id="jScrollPane1" min="-2" pref="125" max="-2" attributes="0"/>
                       <Component id="tablesLabel" min="-2" pref="125" max="-2" attributes="0"/>
@@ -135,7 +146,7 @@
                   <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="jScrollPane2" min="-2" pref="125" max="-2" attributes="0"/>
-                      <Component id="jLabel1" min="-2" pref="112" max="-2" attributes="0"/>
+                      <Component id="fieldLabel" min="-2" pref="112" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
@@ -147,7 +158,7 @@
                   <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="1" attributes="0">
                       <Component id="tablesLabel" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                      <Component id="fieldLabel" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
@@ -199,7 +210,7 @@
         </Container>
         <Component class="javax.swing.JLabel" name="tablesLabel">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Tables:"/>
+            <Property name="text" type="java.lang.String" value="Tablas:"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JToggleButton" name="singleSelBtn">
@@ -207,34 +218,49 @@
             <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
               <ComponentRef name="selectionGroup"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Single Selection"/>
+            <Property name="text" type="java.lang.String" value="Selecci&#xf3;n Individual"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="singleSelBtnActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JToggleButton" name="singleIntervalSelBtn">
           <Properties>
             <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
               <ComponentRef name="selectionGroup"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Single Interval"/>
+            <Property name="text" type="java.lang.String" value="Intervalo Continuo"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="singleIntervalSelBtnActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JToggleButton" name="multipleIntervalSelBtn">
           <Properties>
             <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
               <ComponentRef name="selectionGroup"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Multiple Interval"/>
+            <Property name="text" type="java.lang.String" value="Intervalo M&#xfa;ltiple"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="multipleIntervalSelBtnActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="selectTableBtn">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Select Table"/>
+            <Property name="text" type="java.lang.String" value="Seleccionar Tabla"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="selectTableBtnActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="clearSelectionBtn">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Clear Selection"/>
+            <Property name="text" type="java.lang.String" value="Limpiar Seleccion"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="clearSelectionBtnActionPerformed"/>
+          </Events>
         </Component>
         <Container class="javax.swing.JScrollPane" name="jScrollPane2">
           <AuxValues>
@@ -243,7 +269,7 @@
 
           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
           <SubComponents>
-            <Component class="javax.swing.JList" name="jList1">
+            <Component class="javax.swing.JList" name="fieldList">
               <Properties>
                 <Property name="model" type="javax.swing.ListModel" editor="org.netbeans.modules.form.editors2.ListModelEditor">
                   <StringArray count="0"/>
@@ -255,9 +281,9 @@
             </Component>
           </SubComponents>
         </Container>
-        <Component class="javax.swing.JLabel" name="jLabel1">
+        <Component class="javax.swing.JLabel" name="fieldLabel">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Fields:"/>
+            <Property name="text" type="java.lang.String" value="Campos:"/>
           </Properties>
         </Component>
       </SubComponents>
