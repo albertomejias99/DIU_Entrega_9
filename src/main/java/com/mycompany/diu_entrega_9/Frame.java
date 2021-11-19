@@ -24,6 +24,7 @@ public class Frame extends javax.swing.JFrame {
 
     public Frame() {
         initComponents();
+        this.setTitle("Gestor tablas base de datos - Jorge Marrero & Alberto Mejias");
         tablesList.setModel(tablesModel);
         fieldList.setModel(fieldsModel);
         multipleIntervalSelBtn.setSelected(true);
@@ -246,17 +247,17 @@ public class Frame extends javax.swing.JFrame {
     }//GEN-LAST:event_clearSelectionBtnActionPerformed
 
     private void selectTableBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_selectTableBtnActionPerformed
-        if (tablesModel.getSize() > 0) {
+        if (tablesModel.getSize() > 0 && tablesList.getSelectedIndices().length > 0) {
             int[] indices = tablesList.getSelectedIndices();
             fieldList.removeAll();
             fieldsModel.removeAllElements();
             for (int indice : indices) {
                 try {
-                    ResultSet rs2 = md.getColumns(null, null, (String) tablesModel.getElementAt(indice), null);
+                    String tableName = (String) tablesModel.getElementAt(indice);
+                    ResultSet rs2 = md.getColumns(null, null, tableName, null);
                     while (rs2.next()) {
-                        String nombreCampo = rs2.getString("COLUMN_NAME");
+                        String nombreCampo = tableName + "." +rs2.getString("COLUMN_NAME");
                         int index = 0;
-                        System.out.println(nombreCampo);
                         fieldsModel.add(index, nombreCampo);
                         index++;
                     }
